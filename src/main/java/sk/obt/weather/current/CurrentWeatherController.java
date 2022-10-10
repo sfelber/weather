@@ -1,6 +1,5 @@
 package sk.obt.weather.current;
 
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -47,7 +46,7 @@ public class CurrentWeatherController {
 	 * 
 	 * @param city		to be checked.
 	 * 
-	 * @return {@code true} when input city is 
+	 * @return {@code true} when  city is potentially valid name, otherwise return {@code false}.
 	 */
 	private boolean isCityValid(final String city) {
 		

@@ -38,6 +38,14 @@ public class OpenWeatherMapService {
     }
     
     
+    /**
+     * Method calls external weather service Open Weather Map to get data about current weather in the requested city.
+     * 
+     * @param city		the city for which we want to receive current weather data
+     * 
+     * @return {@link CurrentWeather} object with  current weather data. 
+     * 	<p>In case of invalid city name or some error {@link CurrentWeather#UNKNOWN} is returned.
+     */
     public CurrentWeather getCurrentWeather(String city) {
     	URI url = new UriTemplate(SERVICE_URL).expand(city, apiKey);
         ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
